@@ -40,4 +40,8 @@ function drawGrid() {
   }
 }
 
+document.querySelector(".clear").addEventListener("click", () => {
+  drawGrid();
+});
+
 drawGrid();
