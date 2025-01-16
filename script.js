@@ -1,8 +1,10 @@
 const container = document.querySelector(".container");
 const slidercontainer = document.querySelector(".slider");
 const layout = document.querySelector(".layout");
+const lightButton = document.querySelector(".light");
 let size = slidercontainer.value;
 let paintOn = false;
+let lightOn = true;
 
 slidercontainer.addEventListener("click", () => {
   size = slidercontainer.value;
@@ -14,6 +16,26 @@ container.addEventListener("click", () => {
     paintOn = true;
   } else {
     paintOn = false;
+  }
+});
+
+lightButton.addEventListener("click", () => {
+  const page = document.querySelector(".page");
+  const body = document.querySelector("body");
+  if (lightOn) {
+    lightOn = false;
+    page.style.backgroundColor = "rgb(30,30,30)";
+    body.style.backgroundColor = "rgb(18,18,18)";
+    document.querySelector("h1").style.color = "white";
+    document.querySelector("h2").style.color = "white";
+    document.querySelector(".container").style.borderColor = "lightgray";
+  } else {
+    lightOn = true;
+    body.style.backgroundColor = "lightgray";
+    page.style.backgroundColor = "white";
+    document.querySelector("h1").style.color = "black";
+    document.querySelector("h2").style.color = "black";
+    document.querySelector(".container").style.borderColor = "black";
   }
 });
 
